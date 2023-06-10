@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { supabase } from 'src/supabaseClient'
+    import { supabase } from '../supabaseClient'
   
     let loading = false
     let email = ''

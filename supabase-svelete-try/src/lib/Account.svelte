@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Avatar from './Avatar.svelte'
     import { onMount } from "svelte";
     import type { AuthSession } from "@supabase/supabase-js";
     import { supabase } from "../supabaseClient";
@@ -70,6 +71,7 @@
   </script>
   
   <form on:submit|preventDefault={updateProfile} class="form-widget">
+    <Avatar bind:url="{avatarUrl}" size="{2}" on:upload="{updateProfile}" />
     <div>Email: {session.user.email}</div>
     <div>
       <label for="username">Name</label>
