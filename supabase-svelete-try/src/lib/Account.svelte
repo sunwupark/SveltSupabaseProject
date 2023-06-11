@@ -82,6 +82,10 @@
       <input id="website" type="text" bind:value={website} />
     </div>
     <div>
+      <label for="website">Website</label>
+      <input id="website" type="text" bind:value={website} />
+    </div>
+    <div>
       <button type="submit" class="button primary block" disabled={loading}>
         {loading ? 'Saving ...' : 'Update profile'}
       </button>
