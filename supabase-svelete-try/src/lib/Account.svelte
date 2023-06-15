@@ -5,6 +5,12 @@
     import { supabase } from "../supabaseClient";
 
     export let session: AuthSession;
+
+    import { navigate } from 'svelte-routing';
+
+    function goToAnotherPage() {
+      navigate('/product/:id/UploadmyFiles.svelte');
+    }
   
     let loading = false
     let username: string | null = null
@@ -93,5 +99,5 @@
     <button type="button" class="button block" on:click={() => supabase.auth.signOut()}>
       Sign Out
     </button>
-    <a href="./UploadmyFiles.svelte" class="button block">Go to Upload Page</a>
+    <button on:click={goToAnotherPage}>Go to Another Page</button>
   </form>
