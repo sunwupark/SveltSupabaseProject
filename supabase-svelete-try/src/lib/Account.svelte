@@ -91,6 +91,9 @@
       </button>
     </div>
     <button type="button" class="button block" on:click={() => supabase.auth.signOut()}>
+      Want to Upload More Datas
+    </button>
+    <button type="button" class="button block" on:click={() => supabase.auth.signOut()}>
       Sign Out
     </button>
   </form>
