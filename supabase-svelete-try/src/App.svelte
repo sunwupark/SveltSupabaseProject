@@ -4,6 +4,7 @@
   import type { AuthSession } from '@supabase/supabase-js'
   import Account from './lib/Account.svelte'
   import Auth from './lib/Auth.svelte'
+  import { Router, Route } from 'svelte-routing'
 
   let session: AuthSession
 
@@ -18,10 +19,9 @@
   })
 </script>
 
-<div class="container" style="padding: 50px 0 100px 0">
-  {#if !session}
-  <Auth />
-  {:else}
-  <Account {session} />
-  {/if}
-</div>
+<Router>
+  <Route component={Auth} />
+  <Route path="/product/:id">
+      <Account session={session}/>
+  </Route>
+</Router>

@@ -3,7 +3,7 @@
     import { onMount } from "svelte";
     import type { AuthSession } from "@supabase/supabase-js";
     import { supabase } from "../supabaseClient";
-  
+
     export let session: AuthSession;
   
     let loading = false
@@ -91,9 +91,7 @@
       </button>
     </div>
     <button type="button" class="button block" on:click={() => supabase.auth.signOut()}>
-      Want to Upload More Datas
-    </button>
-    <button type="button" class="button block" on:click={() => supabase.auth.signOut()}>
       Sign Out
     </button>
+    <a href="./UploadmyFiles.svelte" class="button block">Go to Upload Page</a>
   </form>
