@@ -69,3 +69,22 @@ supabase.auth.onAuthStateChange((event, session) => {
       }
     }
   }
+  
+  
+// Assuming you have already initialized the Supabase client (supabase) and imported it
+
+const fetchDatabaseData = async () => {
+  try {
+    const { data, error } = await supabase.from('your_table').select('*');
+    if (error) {
+      throw new Error(error.message);
+    }
+    // Process the retrieved data here
+    console.log(data);
+  } catch (error) {
+    console.error('Error retrieving data:', error.message);
+  }
+};
+
+// Call the function to fetch data from the database
+fetchDatabaseData();
