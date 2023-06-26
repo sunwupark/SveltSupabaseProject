@@ -1,9 +1,8 @@
 <script>
-    import Button from './lib/Button.svelte'
+	import Button from './lib/Button.svelte';
 </script>
 
-<Button />
+<Button size="small" shadow>Button Text</Button>
 
 <style>
-
 </style>
