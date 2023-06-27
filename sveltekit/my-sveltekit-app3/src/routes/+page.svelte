@@ -1,7 +1,17 @@
 <script>
     import { Button } from '$components';
-    import { goto } from "$app/navigation";
+    import { goto, beforeNavigate, afterNavigate } from "$app/navigation";
+    import {navigating} from "$app/stores";
 
+    $: console.log($navigating);
+
+    beforeNavigate((navigation) => {
+        console.log('beforeNavigate', navigation);
+    });
+
+    afterNavigate((navigation) => {
+        console.log('afterNavigate', navigation);
+    });
 </script>
 
 <h1> Welcome to SvelteKit</h1>
